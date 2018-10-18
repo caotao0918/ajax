@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.Stock;
 import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 
 public class ActionServlet extends HttpServlet{
 	/**
@@ -29,17 +28,17 @@ public class ActionServlet extends HttpServlet{
 		System.out.println("service()");
 		String uri = request.getRequestURI();
 		StringBuffer url = request.getRequestURL();
-		System.out.println("uri£º" + uri);
+		System.out.println("uriï¿½ï¿½" + uri);
 		System.out.println("url:" + url);
 		String action = uri.substring(uri.lastIndexOf("/"),uri.indexOf("."));
 		System.out.println("action:" + action);
 		if("/quoto".equals(action)){
-			//Ä£ÄâÉú³É¼¸Ö»¹ÉÆ±µÄÐÅÏ¢
+			//Ä£ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½Ö»ï¿½ï¿½Æ±ï¿½ï¿½ï¿½ï¿½Ï¢
 			List<Stock> stocks = new ArrayList<Stock>();
 			for(int i = 0; i < 8; i++){
 				Stock s = new Stock();
 				s.setCode("60087" + random.nextInt(10));
-				s.setName("Íò¼¯¿Æ¼¼" + random.nextInt(10));
+				s.setName("ï¿½ò¼¯¿Æ¼ï¿½" + random.nextInt(10));
 				s.setPrice(random.nextInt(1000));
 				stocks.add(s);
 			}
@@ -48,13 +47,13 @@ public class ActionServlet extends HttpServlet{
 			System.out.println(jsonStr);
 			out.println(jsonStr);
 		}
-		//ÓÃload·½·¨»ñÈ¡ÐÁÔËÊý×Ö
+		//ï¿½ï¿½loadï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if("/luck".equals(action)){
 			int number = random.nextInt(1000);
 			System.out.println(number);
 			out.println(number);
 		}
-		//ÓÃ$.ajax()·½·¨»ñÈ¡ÐÁÔËÊý×Ö
+		//ï¿½ï¿½$.ajax()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if("/luck2".equals(action)){
 			int number = random.nextInt(1000);
 			System.out.println(number);
