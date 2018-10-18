@@ -1,0 +1,36 @@
+<html>
+	<head>
+	<meta http-equiv="content-type" content="html;charset=utf-8"/>
+		<script type="text/javascript">
+			//使用JSON语法表示一个对象
+			function f1(){
+				var obj = {"code":"600877","name":"中国嘉陵"}
+				alert(obj.code);
+			}
+			function f2(){
+				var obj = {"name":"Sally","adress":{"city":"北京","street":"长安街","room":"8080"}};
+				alert(obj.adress.street);
+			}
+			//使用JSON表示对象组成的数组
+			function f3(){
+				var arr = [{"code":"604445","name":"中国嘉陵"},{"code":"995549","name":"山东高速"}];
+				alert(arr[1].code);
+			}
+			//将json字符串转换为JavaScript对象
+			function f4(){
+				var str = '{"name":"tom","age":22}';
+				//使用js内置的json对象提供的方法来转换
+				var obj = JSON.parse(str);
+				alert(obj.name);
+			}
+			function f5(){
+				var str = '[{"name":"tom","age":12},{"name":"lily","age":20}]';
+				var obj = JSON.parse(str);
+				alert(obj[1].age);
+			}
+		</script>
+	</head>
+	<body>
+		<a href="javascript:f5();">click me</a>
+	</body>
+</html>
